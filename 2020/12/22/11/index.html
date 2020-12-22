@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="热门框架5-MQ 有什么作用, 浅悦的编程时光">
+    <meta name="keywords" content="SQL Server 2008安装教程, 浅悦的编程时光">
     <meta name="description" content=" ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -222,7 +222,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>热门框架5-MQ 有什么作用 | 浅悦的编程时光</title>
+    <title>SQL Server 2008安装教程 | 浅悦的编程时光</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -569,12 +569,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">热门框架5-MQ 有什么作用</h1>
+                    <h1 class="description center-align post-title">SQL Server 2008安装教程</h1>
                 </div>
             </div>
         </div>
@@ -690,8 +690,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%83%AD%E9%97%A8%E6%A1%86%E6%9E%B6/">
-                                <span class="chip bg-color">热门框架</span>
+                            <a href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">技术笔记</span>
                             </a>
                         
                     </div>
@@ -702,8 +702,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
-                                面试
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
                             </a>
                         
                     </div>
@@ -715,7 +715,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-21
+                    2020-12-22
                 </div>
                 
 
@@ -724,14 +724,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    494
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    1 分
                 </div>
                 
 
@@ -754,72 +754,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="MQ-有什么作用？你都用过哪些-MQ-中间件？"><a href="#MQ-有什么作用？你都用过哪些-MQ-中间件？" class="headerlink" title="MQ 有什么作用？你都用过哪些 MQ 中间件？"></a>MQ 有什么作用？你都用过哪些 MQ 中间件？</h3><ul>
-<li>在之前中讲过“手写消息队列”，当时粗略的讲了 Java API 中使用 Queue 实现自定义消息队列，以及使用 Delayed 实现延迟队列的示例；同时还讲了 RabbitMQ 中的一些基础概念。本文章将会更加深入的讲解 MQ（Message Queue，消息队列）中间件，以及这些热门中间件的具体使用。</li>
-</ul>
-<a id="more"></a>
-
-<h4 id="本文章的面试题是，MQ-常见的使用场景有哪些？你都用过哪些-MQ-中间件？"><a href="#本文章的面试题是，MQ-常见的使用场景有哪些？你都用过哪些-MQ-中间件？" class="headerlink" title="本文章的面试题是，MQ 常见的使用场景有哪些？你都用过哪些 MQ 中间件？"></a>本文章的面试题是，MQ 常见的使用场景有哪些？你都用过哪些 MQ 中间件？</h4><h4 id="典型回答"><a href="#典型回答" class="headerlink" title="典型回答"></a>典型回答</h4><hr>
-<p>在介绍 MQ 的使用场景之前，先来回忆一下 MQ 的作用。MQ 可以用来实现削峰填谷，也就是使用它可以解决短时间内爆发式的请求任务，在不使用 MQ 的情况下会导致服务处理不过来，出现应用程序假死的情况，而使用了 MQ 之后可以把这些请求先暂存到消息队列中，然后进行排队执行，那么就不会出现应用程序假死的情况了，所以它的<strong>第一个应用就是商品秒杀以及产品抢购等使用场景</strong>，如下图所示：</p>
-<p><img src="https://s0.lgstatic.com/i/image/M00/00/57/Ciqc1F6pUvmAD5AIAACea-Dr-GI912.png" alt="图片1.png"></p>
-<h5 id="使用-MQ-实现消息通讯"><a href="#使用-MQ-实现消息通讯" class="headerlink" title="使用 MQ 实现消息通讯"></a>使用 MQ 实现消息通讯</h5><p>使用 MQ 可以作为消息通讯的实现手段，利用它可以实现点对点的通讯或者多对多的聊天室功能。</p>
-<p>点对点的消息通讯如下图所示：</p>
-<p><img src="https://s0.lgstatic.com/i/image/M00/00/57/Ciqc1F6pUw6AOt55AAEo3ij3m_I665.png" alt="图片2.png"></p>
-<p>多对多的消息通讯如下图所示：</p>
-<p><img src="https://s0.lgstatic.com/i/image/M00/00/57/CgqCHl6pUxaAYKOEAAFfQw8KV78965.png" alt="图片3.png"></p>
-<h5 id="使用-MQ-实现日志系统"><a href="#使用-MQ-实现日志系统" class="headerlink" title="使用 MQ 实现日志系统"></a>使用 MQ 实现日志系统</h5><p>可使用 MQ 实现对日志的采集和转发，比如有多个日志写入到程序中，然后把日志添加到 MQ，紧接着由日志处理系统订阅 MQ，最后 MQ 将消息接收并转发给日志处理系统，这样就完成了日志的分析和保存功能，如下图所示：</p>
-<p><img src="https://s0.lgstatic.com/i/image/M00/00/57/Ciqc1F6pUx-AOEVkAACdQvKFiYs680.png" alt="图片4.png"></p>
-<p>常用的 MQ 中间件有 RabbitMQ、Kafka 和 Redis 等，其中 Redis 属于轻量级的消息队列，而 RabbitMQ、Kafka 属于比较成熟且比较稳定和高效的 MQ 中间件。</p>
-<h4 id="考点分析"><a href="#考点分析" class="headerlink" title="考点分析"></a>考点分析</h4><hr>
-<p>MQ 属于中高级或优秀的程序员必备的技能，对于 MQ 中间件掌握的数量则是你技术广度和编程经验的直接体现信息之一。值得庆幸的是，关于 MQ 中间件的实现原理和使用方式都比较类似，因此如果开发者掌握一项 MQ 中间件再去熟悉其他 MQ 中间件时，会非常的容易。</p>
-<p>MQ 相关的面试题还有这些：</p>
-<ul>
-<li>MQ 的特点是什么？引入 MQ 中间件会带来哪些问题？</li>
-<li>常见的 MQ 中间件的优缺点分析。</li>
-</ul>
-<h4 id="知识扩展"><a href="#知识扩展" class="headerlink" title="知识扩展"></a>知识扩展</h4><hr>
-<h5 id="MQ-的特点及注意事项"><a href="#MQ-的特点及注意事项" class="headerlink" title="MQ 的特点及注意事项"></a><strong>MQ 的特点及注意事项</strong></h5><p>MQ 具有以下 5 个特点。</p>
-<ul>
-<li><strong>先进先出</strong>：消息队列的顺序一般在入列时就基本确定了，最先到达消息队列的信息，一般情况下也会先转发给订阅的消费者，我们把这种实现了先进先出的数据结构称之为队列。</li>
-<li><strong>发布、订阅工作模式</strong>：<strong>生产者</strong>也就是消息的创建者，负责创建和推送数据到消息服务器；<strong>消费者</strong>也就是消息的接收方，用于处理数据和确认消息的消费；<strong>消息队列</strong>也是 MQ 服务器中最重要的组成元素之一，它负责消息的存储，这三者是 MQ 中的三个重要角色。而它们之间的消息传递与转发都是通过发布以及订阅的工作模式来进行的，即生产者把消息推送到消息队列，消费者订阅到相关的消息后进行消费，在消息非阻塞的情况下，此模式基本可以实现同步操作的效果。并且此种工作模式会把请求的压力转移给 MQ 服务器，以减少了应用服务器本身的并发压力。</li>
-<li><strong>持久化</strong>：持久化是把消息从内存存储到磁盘的过程，并且在服务器重启或者发生宕机的情况下，重新启动服务器之后是保证数据不会丢失的一种手段，也是目前主流 MQ 中间件都会提供的重要功能。</li>
-<li><strong>分布式</strong>：MQ 的一个主要特性就是要应对大流量、大数据的高并发环境，一个单体的 MQ 服务器是很难应对这种高并发的压力的，所以 MQ 服务器都会支持分布式应用的部署，以分摊和降低高并发对 MQ 系统的冲击。</li>
-<li><strong>消息确认</strong>：消息消费确认是程序稳定性和安全性的一个重要考核指标，假如消费者在拿到消息之后突然宕机了，那么 MQ 服务器会误认为此消息已经被消费者消费了，从而造成消息丢失的问题，而目前市面上的主流 MQ 都实现了消息确认的功能，保证了消息不会丢失，从而保证了系统的稳定性。</li>
-</ul>
-<p><strong>引入 MQ 系统会带来的问题</strong></p>
-<p>任何系统的引入都是有两面性的，MQ 也不例外，在引入 MQ 之后，可能会带来以下两个问题。</p>
-<ul>
-<li><strong>增加了系统的运行风险</strong>：引入 MQ 系统，则意味着新增了一套系统，并且其他的业务系统会对 MQ 系统进行深度依赖，系统部署的越多则意味着发生故障的可能性就越大，如果 MQ 系统挂掉的话可能会导致整个业务系统瘫痪。</li>
-<li><strong>增加了系统的复杂度</strong>：引入 MQ 系统后，需要考虑消息丢失、消息重复消费、消息的顺序消费等问题，同时还需要引入新的客户端来处理 MQ 的业务，增加了编程的运维门槛，增加了系统的复杂性。</li>
-</ul>
-<p>使用 MQ 需要注意的问题，不要过度依赖 MQ，比如发送短信验证码或邮件等功能，这种低频但有可能比较耗时的功能可以使用多线程异步处理即可，不用任何的功能都依赖 MQ 中间件来完成，但像秒杀抢购可能会导致超卖（也就是把货卖多了，库存变成负数了）等短时间内高并发的请求，此时建议使用 MQ 中间件。</p>
-<h5 id="常用的-MQ-中间件"><a href="#常用的-MQ-中间件" class="headerlink" title="常用的 MQ 中间件"></a>常用的 MQ 中间件</h5><p>常用的 MQ 中间件有 Redis、RabbitMQ、Kafka，下来我们分别来看看各自的作用。</p>
-<p><strong>Redis 轻量级的消息中间件</strong><br>Redis 是一个高效的内存性数据库中间件，但使用 Redis 也可以实现消息队列的功能。</p>
-<p>早期的 Redis（Redis 5.0 之前）是不支持消息确认的，那时候我们可以通过 List 数据类型的 lpush 和 rpop 方法来实现队列消息的存入和读取功能，或者使用 Redis 提供的发布订阅（pub/sub）功能来实现消息队列，但这种模式不支持持久化，List 虽然支持持久化但不能设置复杂的路由规则来匹配多个消息，并且他们二者都不支持消息消费确认。</p>
-<p>于是在 Redis 5.0 之后提供了新的数据类型 Stream 解决了消息确认的问题，但它同样不能提供复杂的路由匹配规则，因此在业务不复杂的场景下可以尝试性的使用 Redis 提供的消息队列。</p>
-<p><strong>RabbitMQ</strong><br>在第 10 课时中，我们对 RabbitMQ 有过初步的讲解，它是一个实现了标准的高级消息队列协议（AMQP，Advanced Message Queuing Protocol）的老牌开源消息中间件，最初起源于金融系统，后来被普遍应用在了其他分布式系统中，它支持集群部署，和多种客户端调用。</p>
-<p>之前主要介绍了 RabbitMQ 的基础功能，本课时我们重点来看 RabbitMQ 集群相关的内容。</p>
-<p>RabbitMQ 集群是由多个节点组成，但默认情况下每个节点并不是存储所有队列的完整拷贝，这是出于存储空间和性能的考虑，因为如果存储了队列的完整拷贝，那么就会有很多冗余的重复数据，并且在新增节点的情况下，不但没有新增存储空间，反而需要更大的空间来存储旧的数据；同样的道理，如果每个节点都保存了所有队列的完整信息，那么非查询操作的性能就会很慢，就会需要更多的网络带宽和磁盘负载来存储这些数据。</p>
-<p>为了能兼顾性能和稳定性，RabbitMQ 集群的节点分为两种类型，即磁盘节点和内存节点，对于磁盘节点来说显然它的优势就是稳定，可以把相关数据保存下来，若 RabbitMQ 因为意外情况宕机，重启之后保证了数据不丢失；而内存节点的优势是快，因为是在内存中进行数据交换和操作，因此性能比磁盘节点要高出很多倍。</p>
-<p>如果是单个 RabbitMQ 那么就必须要求是磁盘节点，否则当 RabbitMQ 服务器重启之后所有的数据都会丢失，这样显然是不能接受的。在 RabbitMQ 的集群中，至少需要一个磁盘节点，这样至少能保证集群数据的相对可靠性。</p>
-<p>如果集群中的某一个磁盘节点崩溃了，此时整个 RabbitMQ 服务也不会处于崩溃的状态，不过部分操作会受影响，比如不能创建队列、交换器、也不能添加用户及修改用户权限，更不能添加和删除集群的节点等功能。</p>
-<blockquote>
-<p>小贴士：对于 RabbitMQ 集群来说，我们启动集群节点的顺序应该是先启动磁盘节点再启动内存节点，而关闭的顺序正好和启动的顺序相反，不然可能会导致 RabbitMQ 集群启动失败或者是数据丢失等异常问题。</p>
+                <h3 id="SQL-Server-2008安装教程"><a href="#SQL-Server-2008安装教程" class="headerlink" title="SQL Server 2008安装教程"></a>SQL Server 2008安装教程</h3><blockquote>
+<p>压缩包文件地址:</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1C1zDe6k_6LLLvZrf-e8Q4A">https://pan.baidu.com/s/1C1zDe6k_6LLLvZrf-e8Q4A</a> </p>
+<p>提取码：oui6</p>
 </blockquote>
-<p><strong>Kafka</strong><br>Kafka 是 LinkedIn 公司开发的基于 ZooKeeper 的多分区、多副本的分布式消息系统，它于 2010 年贡献给了 Apache 基金会，并且成为了 Apache 的顶级开源项目。其中 ZooKeeper 的作用是用来为 Kafka 提供集群元数据管理以及节点的选举和发现等功能。</p>
-<p>与 RabbitMQ 比较类似，一个典型的 Kafka 是由多个 Broker、多个生产者和消费者，以及 ZooKeeper 集群组成的，其中 Broker 可以理解为一个代理，Kafka 集群中的一台服务器称之为一个 Broker，其组成框架图如下所示：</p>
-<p><img src="https://s0.lgstatic.com/i/image/M00/00/58/Ciqc1F6pVM6AYc7IAADyGfH6aOQ413.png" alt="image.png"></p>
-<p><strong>Kafka VS RabbitMQ</strong><br>Kafka（2.0.0）和 RabbitMQ（3.6.10）的区别主要体现在以下几点：</p>
-<ul>
-<li>Kafka 支持消息回溯，它可以根据 Offset（消息偏移量）、TimeStamp（时间戳）等维度进行消息回溯，而 RabbitMQ 并不支持消息回溯；</li>
-<li>Kafka 的消息消费是基于拉取数据的模式，也就是消费者主动向服务器端发送拉取消息请求，而 RabbitMQ 支持拉取数据模式和主动推送数据的模式，也就说 RabbitMQ 服务器会主动把消息推送给订阅的消费者；</li>
-<li>在相同配置下，Kafka 的吞吐量通常会比 RabbitMQ 高一到两个级别，比如在单机模式下，RabbitMQ 的吞吐量大概是万级别的处理能力，而 Kafka 则可以到达十万甚至是百万的吞吐级别；</li>
-<li>Kafka 从 0.11 版本就开始支持幂等性了，当然所谓的幂等性指的是对单个生产者在单分区上的单会话的幂等操作，但对于全局幂等性则还需要结合业务来处理，比如，消费者在消费完一条消息之后没有来得及确认就发生异常了，等到恢复之后又得重新消费原来消费过的消息，类似这种情况，是无法在消息中间件层面来保证的，这个时候则需要引入更多的外部资源来保证全局幂等性，比如唯一的订单号、消费之前先做去重判断等；而 RabbitMQ 是没有幂等性功能支持的；</li>
-<li>RabbitMQ 支持多租户的功能，也就是常说的 Virtual Host（vhost），每一个 vhost 相当于一个独立的小型 RabbitMQ 服务器，它们拥有自己独立的交换器、消息队列及绑定关系等，并且拥有自己独立权限，而且多个 vhost 之间是绝对隔离的，但 Kafka 并不支持多租户的功能。</li>
-</ul>
-<p>Kafka 和 RabbitMQ 都支持分布式集群部署，并且都支持数据持久化和消息消费确认等 MQ 的核心功能，对于 MQ 的选型要结合自己团队本身的情况，从性能、稳定性及二次开发的难易程度等维度来进行综合的考量并选择。</p>
-<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><hr>
-<p>本文章我们讲了 MQ 的常见使用场景，以及常见的 MQ 中间件（Redis、RabbitMQ、Kafka）及其优缺点分析；同时还了解了 MQ 的五大特点：先进先出、发布和订阅的模式、持久化、分布式和消息确认等；接着讲了 MQ 引入对系统可能带来的风险；最后讲了 MQ 在使用时需要注意的问题。</p>
+<h4 id="1、打开下载后的文件夹，双击-exe文件"><a href="#1、打开下载后的文件夹，双击-exe文件" class="headerlink" title="1、打开下载后的文件夹，双击.exe文件"></a>1、打开下载后的文件夹，双击<code>.exe</code>文件</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222215454204.png"></p>
+<h4 id="2、点击左侧安装"><a href="#2、点击左侧安装" class="headerlink" title="2、点击左侧安装"></a>2、点击左侧<code>安装</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222172805753.png"></p>
+<h4 id="3、选择右侧第一项：全新安装"><a href="#3、选择右侧第一项：全新安装" class="headerlink" title="3、选择右侧第一项：全新安装"></a>3、选择右侧第一项：<code>全新安装</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222172852602.png"></p>
+<h4 id="4、等待程序"><a href="#4、等待程序" class="headerlink" title="4、等待程序"></a>4、等待程序</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222172910729.png"></p>
+<h4 id="5、对安装规则进行检测，显示通过后点击确定"><a href="#5、对安装规则进行检测，显示通过后点击确定" class="headerlink" title="5、对安装规则进行检测，显示通过后点击确定"></a>5、对安装规则进行检测，显示通过后点击<code>确定</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222172931976.png"></p>
+<h4 id="6、关于产品秘钥，下载程序中会自动填写秘钥，点击下一步即可"><a href="#6、关于产品秘钥，下载程序中会自动填写秘钥，点击下一步即可" class="headerlink" title="6、关于产品秘钥，下载程序中会自动填写秘钥，点击下一步即可"></a>6、关于产品秘钥，下载程序中会自动填写秘钥，点击<code>下一步</code>即可</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222173036315.png"></p>
+<h4 id="7、勾选我接受，然后点击下一步"><a href="#7、勾选我接受，然后点击下一步" class="headerlink" title="7、勾选我接受，然后点击下一步"></a>7、勾选我接受，然后点击<code>下一步</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222173107529.png"></p>
+<h4 id="8、对于程序支持文件，点击安装"><a href="#8、对于程序支持文件，点击安装" class="headerlink" title="8、对于程序支持文件，点击安装"></a>8、对于程序支持文件，点击<code>安装</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222173134718.png"></p>
+<p>9、安装通过，点击<code>下一步</code></p>
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222181839729.png"></p>
+<h4 id="10、选择功能安装，点击下一步"><a href="#10、选择功能安装，点击下一步" class="headerlink" title="10、选择功能安装，点击下一步"></a>10、选择功能安装，点击<code>下一步</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222181934577.png"></p>
+<h4 id="11、对功能可以点击全选，也可以根据需求自己选择，选择完毕后点击下一步"><a href="#11、对功能可以点击全选，也可以根据需求自己选择，选择完毕后点击下一步" class="headerlink" title="11、对功能可以点击全选，也可以根据需求自己选择，选择完毕后点击下一步"></a>11、对功能可以点击全选，也可以根据需求自己选择，选择完毕后点击<code>下一步</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182037685.png"></p>
+<h4 id="12、规则检测完成后，继续点击下一步"><a href="#12、规则检测完成后，继续点击下一步" class="headerlink" title="12、规则检测完成后，继续点击下一步"></a>12、规则检测完成后，继续点击<code>下一步</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182106917.png"></p>
+<h4 id="13、安装配置页面，选择默认实例，点击下一步"><a href="#13、安装配置页面，选择默认实例，点击下一步" class="headerlink" title="13、安装配置页面，选择默认实例，点击下一步"></a>13、安装配置页面，选择默认实例，点击<code>下一步</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182151565.png"></p>
+<h4 id="14、保证所在磁盘有对应的空间，点击下一步"><a href="#14、保证所在磁盘有对应的空间，点击下一步" class="headerlink" title="14、保证所在磁盘有对应的空间，点击下一步"></a>14、保证所在磁盘有对应的空间，点击<code>下一步</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182238572.png"></p>
+<h4 id="15、服务账户按图中勾选，点击下一步"><a href="#15、服务账户按图中勾选，点击下一步" class="headerlink" title="15、服务账户按图中勾选，点击下一步"></a>15、服务账户按图中勾选，点击<code>下一步</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182436425.png"></p>
+<h4 id="16、选择混合模式，输入sa的密码，然后点击添加当前用户，添加用户后点击下一步"><a href="#16、选择混合模式，输入sa的密码，然后点击添加当前用户，添加用户后点击下一步" class="headerlink" title="16、选择混合模式，输入sa的密码，然后点击添加当前用户，添加用户后点击下一步"></a>16、选择混合模式，输入sa的密码，然后点击添加当前用户，添加用户后点击<code>下一步</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182616256.png"></p>
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182647858.png"></p>
+<h4 id="17、点击添加当前用户，然后点击下一步"><a href="#17、点击添加当前用户，然后点击下一步" class="headerlink" title="17、点击添加当前用户，然后点击下一步"></a>17、点击添加当前用户，然后点击<code>下一步</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182717774.png"></p>
+<h4 id="18、配置和错误报告直接点击下一步即可"><a href="#18、配置和错误报告直接点击下一步即可" class="headerlink" title="18、配置和错误报告直接点击下一步即可"></a>18、配置和错误报告直接点击<code>下一步</code>即可</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182738681.png"></p>
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182759769.png"></p>
+<h4 id="19、安装配置规则通过后点击下一步"><a href="#19、安装配置规则通过后点击下一步" class="headerlink" title="19、安装配置规则通过后点击下一步"></a>19、安装配置规则通过后点击<code>下一步</code></h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182825015.png"></p>
+<h4 id="20、点击安装，然后开始安装，等待10分钟左右"><a href="#20、点击安装，然后开始安装，等待10分钟左右" class="headerlink" title="20、点击安装，然后开始安装，等待10分钟左右"></a>20、点击安装，然后开始安装，等待10分钟左右</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222182939938.png"></p>
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222183047121.png"></p>
+<h4 id="21、安装完成，重启电脑"><a href="#21、安装完成，重启电脑" class="headerlink" title="21、安装完成，重启电脑"></a>21、安装完成，重启电脑</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222184640792.png"></p>
+<h4 id="22、打开软件"><a href="#22、打开软件" class="headerlink" title="22、打开软件"></a>22、打开软件</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/1a1e9c94285b4e446223c6d8e9b07f0.png"></p>
+<h4 id="23、打开新安装的软件，按照图中填写，注意密码填写设置的sa的密码，点击登录"><a href="#23、打开新安装的软件，按照图中填写，注意密码填写设置的sa的密码，点击登录" class="headerlink" title="23、打开新安装的软件，按照图中填写，注意密码填写设置的sa的密码，点击登录"></a>23、打开新安装的软件，按照图中填写，注意密码填写设置的sa的密码，点击登录</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/f33a48cf96e5481d53e597a42c03c76.png"></p>
+<h4 id="24、如果出现图中错误，请开启对应服务。"><a href="#24、如果出现图中错误，请开启对应服务。" class="headerlink" title="24、如果出现图中错误，请开启对应服务。"></a>24、如果出现图中错误，请开启对应服务。</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/5d93f3c0393226e3f77cf29e2826d03.png"></p>
+<h4 id="25、点击开始，选择所有程序，点击Sqlserver-2008-R2"><a href="#25、点击开始，选择所有程序，点击Sqlserver-2008-R2" class="headerlink" title="25、点击开始，选择所有程序，点击Sqlserver 2008 R2"></a>25、点击开始，选择所有程序，点击Sqlserver 2008 R2</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201222221124471.png"></p>
+<p>26、选择配置工具，接着点击配置管理器</p>
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/3745b81f8e62c3d0370c40d6a20268b.png"></p>
+<h4 id="27、在弹出的页面中，点击SQLserver服务"><a href="#27、在弹出的页面中，点击SQLserver服务" class="headerlink" title="27、在弹出的页面中，点击SQLserver服务"></a>27、在弹出的页面中，点击SQLserver服务</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/6c4d25f86bfe8dfa299b2e7d3ace66b.png"></p>
+<h4 id="28、选择MSSQLSERVER，启动这个服务，然后就可以的登陆。"><a href="#28、选择MSSQLSERVER，启动这个服务，然后就可以的登陆。" class="headerlink" title="28、选择MSSQLSERVER，启动这个服务，然后就可以的登陆。"></a>28、选择MSSQLSERVER，启动这个服务，然后就可以的登陆。</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/dcb521e53713d5a9cdfd31f224ff539.png"></p>
+<h4 id="29、输入登录名和密码"><a href="#29、输入登录名和密码" class="headerlink" title="29、输入登录名和密码"></a>29、输入登录名和密码</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/226088e438652c1a1e49aeb23a4d21b.png"></p>
+<h4 id="30、安装成功"><a href="#30、安装成功" class="headerlink" title="30、安装成功"></a>30、安装成功</h4><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/8677e8e4297df03f47ed0862db92519.png"></p>
 
                 
             </div>
@@ -846,7 +820,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://nate-lin.github.io/2020/09/21/re-men-kuang-jia-5-mq-you-shi-me-zuo-yong/">https://nate-lin.github.io/2020/09/21/re-men-kuang-jia-5-mq-you-shi-me-zuo-yong/</a>
+                    <a href="https://nate-lin.github.io/2020/12/22/11/">https://nate-lin.github.io/2020/12/22/11/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -884,8 +858,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%83%AD%E9%97%A8%E6%A1%86%E6%9E%B6/">
-                                    <span class="chip bg-color">热门框架</span>
+                                <a href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">技术笔记</span>
                                 </a>
                             
                         </div>
@@ -1318,47 +1292,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/09/23/shu-ju-ku-1-mysql-de-yun-xing-ji-zhi-shi-shi-me/">
+                <a href="/2020/12/22/11/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="数据库1-MySQL 的运行机制是什么">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="SQL Server 2008安装教程">
                         
-                        <span class="card-title">数据库1-MySQL 的运行机制是什么</span>
+                        <span class="card-title">SQL Server 2008安装教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MySQL 的运行机制是什么？它有哪些引擎？
-数据库是 Java 程序员面试必问的知识点之一，它和 Java 的核心面试点共同组成了一个完整的技术面试。而数据库一般泛指的就是 MySQL，因为 MySQL 几乎占据了数据库的半壁江山，即使有
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
-                                    面试
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">技术笔记</span>
                     </a>
                     
                 </div>
@@ -1372,26 +1347,26 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/20/git-clone-zhu-ti-xiang-mu-wen-jian-shi-bao-cuo/">
+                <a href="/2020/12/19/jie-jue-github.com-de-xiang-ying-shi-jian-guo-chang-de-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="git clone主题项目文件时报错">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="解决-github.com** 的响应时间过长的问题">
                         
-                        <span class="card-title">git clone主题项目文件时报错</span>
+                        <span class="card-title">解决-github.com** 的响应时间过长的问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            操作：git clone https://github.com/...
+                            1.问题
+当打开自己的Github博客时，显示无法访问此网站。
 
-报错：
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-19
                             </span>
                         <span class="publish-author">
                             
