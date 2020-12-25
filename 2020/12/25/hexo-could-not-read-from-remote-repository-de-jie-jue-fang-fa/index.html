@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="个人简历, 浅悦的编程时光">
+    <meta name="keywords" content="Hexo-Could not read from remote repository的解决方法, 浅悦的编程时光">
     <meta name="description" content=" ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -25,7 +25,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>个人简历 | 浅悦的编程时光</title>
+    <title>Hexo-Could not read from remote repository的解决方法 | 浅悦的编程时光</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -644,12 +644,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">个人简历</h1>
+                    <h1 class="description center-align post-title">Hexo-Could not read from remote repository的解决方法</h1>
                 </div>
             </div>
         </div>
@@ -659,22 +659,129 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">技术笔记</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -683,7 +790,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-02
+                    2020-12-25
                 </div>
                 
 
@@ -692,7 +799,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    136
                 </div>
                 
 
@@ -722,15 +829,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="row">
-    <embed src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/resume/JAVA%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88_%E6%9E%97%E6%98%A5%E7%87%95_%E6%9C%AC%E7%A7%91.pdf" width="100%" height="550" type="application/pdf">
-	</div>
+                <h3 id="1-问题"><a href="#1-问题" class="headerlink" title="1.问题"></a>1.问题</h3><p>当<code>hexo g -d</code>就报以下错误，解决方式如下</p>
+<blockquote>
+<p>Disconnected from 18.140.96.234 port 443<br>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br>and the repository exists.</p>
+</blockquote>
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225134447293.png" alt="image-20201225134447293"></p>
+<h3 id="2-解决方法"><a href="#2-解决方法" class="headerlink" title="2.解决方法"></a>2.解决方法</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">git init
+git add <span class="token punctuation">.</span>
+git commit <span class="token operator">-</span>m “修改”
+git remote add origin url <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135043871.png" alt="image-20201225135043871"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">git push origin master <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-                                          
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135735972.png" alt="正确图片"></p>
+<blockquote>
+<p>输入以上命令出现以下图片的，则问题解决完毕；如出现以下错误图片的，则继续操作命令。</p>
+</blockquote>
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135425451.png" alt="错误图片"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">git push <span class="token operator">-</span>f origin master  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<blockquote>
+<p> 如出现错误图片，再执行一次，直至出现正确图片为止</p>
+</blockquote>
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135459644.png" alt="错误图片"></p>
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135553405.png" alt="正确图片"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">git push origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135735972.png" alt="image-20201225135735972"></p>
 
                 
             </div>
@@ -757,7 +884,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://nate-lin.github.io/resume/index.html">https://nate-lin.github.io/resume/index.html</a>
+                    <a href="https://nate-lin.github.io/2020/12/25/hexo-could-not-read-from-remote-repository-de-jie-jue-fang-fa/">https://nate-lin.github.io/2020/12/25/hexo-could-not-read-from-remote-repository-de-jie-jue-fang-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -794,7 +921,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">技术笔记</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1230,13 +1361,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/resume/index.html">
+                <a href="/2020/12/25/hexo-could-not-read-from-remote-repository-de-jie-jue-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="个人简历">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Hexo-Could not read from remote repository的解决方法">
                         
-                        <span class="card-title">个人简历</span>
+                        <span class="card-title">Hexo-Could not read from remote repository的解决方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1247,17 +1378,29 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-25
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            浅  悦
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">技术笔记</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1265,16 +1408,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/resume/index.html">
+                <a href="/2020/12/24/hexo-tian-jia-ban-niang-he-you-qu-title/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="个人简历">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Hexo-添加板娘和有趣Title">
                         
-                        <span class="card-title">个人简历</span>
+                        <span class="card-title">Hexo-添加板娘和有趣Title</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1285,17 +1428,28 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-24
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            浅  悦
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">技术笔记</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1324,6 +1478,100 @@
 
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 

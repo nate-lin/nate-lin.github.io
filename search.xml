@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Hexo-Could not read from remote repository的解决方法</title>
+      <link href="2020/12/25/hexo-could-not-read-from-remote-repository-de-jie-jue-fang-fa/"/>
+      <url>2020/12/25/hexo-could-not-read-from-remote-repository-de-jie-jue-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-问题"><a href="#1-问题" class="headerlink" title="1.问题"></a>1.问题</h3><p>当<code>hexo g -d</code>就报以下错误，解决方式如下</p><blockquote><p>Disconnected from 18.140.96.234 port 443<br>fatal: Could not read from remote repository.</p><p>Please make sure you have the correct access rights<br>and the repository exists.</p></blockquote><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225134447293.png" alt="image-20201225134447293"></p><h3 id="2-解决方法"><a href="#2-解决方法" class="headerlink" title="2.解决方法"></a>2.解决方法</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">git initgit add <span class="token punctuation">.</span>git commit <span class="token operator">-</span>m “修改”git remote add origin url <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135043871.png" alt="image-20201225135043871"></p><pre class="line-numbers language-java" data-language="java"><code class="language-java">git push origin master <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135735972.png" alt="正确图片"></p><blockquote><p>输入以上命令出现以下图片的，则问题解决完毕；如出现以下错误图片的，则继续操作命令。</p></blockquote><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135425451.png" alt="错误图片"></p><pre class="line-numbers language-java" data-language="java"><code class="language-java">git push <span class="token operator">-</span>f origin master  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><blockquote><p> 如出现错误图片，再执行一次，直至出现正确图片为止</p></blockquote><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135459644.png" alt="错误图片"></p><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135553405.png" alt="正确图片"></p><pre class="line-numbers language-java" data-language="java"><code class="language-java">git push origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201225135735972.png" alt="image-20201225135735972"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo-添加板娘和有趣Title</title>
       <link href="2020/12/24/hexo-tian-jia-ban-niang-he-you-qu-title/"/>
       <url>2020/12/24/hexo-tian-jia-ban-niang-he-you-qu-title/</url>
