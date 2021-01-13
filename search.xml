@@ -1204,31 +1204,6 @@
     
     
     <entry>
-      <title>IDEA的database插件无法链接mysql</title>
-      <link href="2020/07/30/idea-de-database-cha-jian-wu-fa-lian-jie-mysql/"/>
-      <url>2020/07/30/idea-de-database-cha-jian-wu-fa-lian-jie-mysql/</url>
-      
-        <content type="html"><![CDATA[<h3 id="IDEA的database插件无法链接mysql的解决办法（08001错误）"><a href="#IDEA的database插件无法链接mysql的解决办法（08001错误）" class="headerlink" title="[IDEA的database插件无法链接mysql的解决办法（08001错误）]"></a>[IDEA的database插件无法链接mysql的解决办法（08001错误）]</h3><p> <strong>1、问题</strong></p><hr><a id="more"></a><p>首先先说问题，用navicat链接数据库正常，mysql控制台操作正常，但是用IDEA的数据库插件链接一直报 08001 错误，具体见下图：</p><p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20200811223326845.png"></p><p><strong>2、错误提示：</strong></p><hr><blockquote><p>Connection to eshop@localhost failed.<br>[08001] Could not create connection to database server. Attempted reconnect 3 times. Giving up.</p></blockquote><hr><ul><li>输入对应的个人信息<ul><li>User:root</li><li>Password:数据密码</li><li>Database:mybatis(自己需连接的数据库名字)</li></ul></li></ul><!-- more --><p><strong>3、错误原因</strong></p><hr><ul><li><p>未设置时区，将时区设置为GMT（格林尼标准时间）即可。</p></li><li><p>在URL后添加： ?serverTimezone=GMT，如图所示</p><ul><li>出现下图现象表明连接成功！</li></ul></li></ul><p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20200811223832505.png"></p><p><strong>4、点击Apply</strong>  </p><hr><ul><li>点击<strong>Apply</strong>、<strong>OK</strong>后即可返回查看此页面，表明连接成功！</li></ul><p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20200811224929458.png"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 技术笔记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Java基础7-深克隆和浅克隆的区别</title>
       <link href="2020/07/30/java-ji-chu-7-shen-ke-long-he-qian-ke-long-de-qu-bie/"/>
       <url>2020/07/30/java-ji-chu-7-shen-ke-long-he-qian-ke-long-de-qu-bie/</url>
