@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo博客yilia主题-所有文章模块缺失解决方案, 浅悦的编程时光">
+    <meta name="keywords" content="Hexo-添加板娘和有趣Title, 浅悦的编程时光">
     <meta name="description" content=" ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -25,7 +25,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo博客yilia主题-所有文章模块缺失解决方案 | 浅悦的编程时光</title>
+    <title>Hexo-添加板娘和有趣Title | 浅悦的编程时光</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -625,12 +625,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo博客yilia主题-所有文章模块缺失解决方案</h1>
+                    <h1 class="description center-align post-title">Hexo-添加板娘和有趣Title</h1>
                 </div>
             </div>
         </div>
@@ -746,8 +746,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
-                                <span class="chip bg-color">个人博客</span>
+                            <a href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">技术笔记</span>
                             </a>
                         
                     </div>
@@ -758,8 +758,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/HEXO/" class="post-category">
-                                HEXO
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
                             </a>
                         
                     </div>
@@ -771,7 +771,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-26
+                    2020-12-24
                 </div>
                 
 
@@ -780,14 +780,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    482
+                    231
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -810,123 +810,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="一、发现问题"><a href="#一、发现问题" class="headerlink" title="一、发现问题"></a>一、发现问题</h3><blockquote>
-<p>hexo博客yilia主题，左侧栏目中有一个所有文章的分栏，刚刚安装yilia主题，点击所有文章栏目会报错缺失模块，报错如下所示</p>
+                <h3 id="1、添加板娘"><a href="#1、添加板娘" class="headerlink" title="1、添加板娘"></a>1、添加板娘</h3><blockquote>
+<p>1.在主题下的<code>layout.ejs</code>文件添加如下内容</p>
 </blockquote>
-<a id="more"></a>
-
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20200909170608797.png" alt="image-20200909170608797"></p>
-<h3 id="二、解决问题"><a href="#二、解决问题" class="headerlink" title="二、解决问题"></a>二、解决问题</h3><h4 id="解决方案1"><a href="#解决方案1" class="headerlink" title="解决方案1"></a>解决方案1</h4><blockquote>
-<p>通常的解决方法是按照报错提示的方法<br>首先<br>在博客目录下git bash中按提示执行命令</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">npm i hexo<span class="token operator">-</span>generator<span class="token operator">-</span>json<span class="token operator">-</span>content <span class="token operator">--</span>save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
-<p>得到下图反馈表示插件安装成功</p>
+<p>2.在主题下的<code>head.ejs</code>文件添加如下内容</p>
 </blockquote>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20200910234634148.png" alt="image-20200910234634148"></p>
-<blockquote>
-<p>接着在根目录_config.yml配置下添加如下代码（原样复制粘贴即可）</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">jsonContent<span class="token operator">:</span>
-  meta<span class="token operator">:</span> <span class="token boolean">false</span>
-  pages<span class="token operator">:</span> <span class="token boolean">false</span>
-  posts<span class="token operator">:</span>
-    title<span class="token operator">:</span> <span class="token boolean">true</span>
-    date<span class="token operator">:</span> <span class="token boolean">true</span>
-    path<span class="token operator">:</span> <span class="token boolean">true</span>
-    text<span class="token operator">:</span> <span class="token boolean">false</span>
-    raw<span class="token operator">:</span> <span class="token boolean">false</span>
-    content<span class="token operator">:</span> <span class="token boolean">false</span>
-    slug<span class="token operator">:</span> <span class="token boolean">false</span>
-    updated<span class="token operator">:</span> <span class="token boolean">false</span>
-    comments<span class="token operator">:</span> <span class="token boolean">false</span>
-    link<span class="token operator">:</span> <span class="token boolean">false</span>
-    permalink<span class="token operator">:</span> <span class="token boolean">false</span>
-    excerpt<span class="token operator">:</span> <span class="token boolean">false</span>
-    categories<span class="token operator">:</span> <span class="token boolean">false</span>
-    tags<span class="token operator">:</span> <span class="token boolean">true</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>作用：把板娘固定在右边（设置在固定位置）</li>
+</ul>
+<pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">#waifu</span><span class="token punctuation">{</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> auto <span class="token important">!important</span><span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 440px <span class="token important">!important</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<blockquote>
-<p>之后执行命令</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">hexo clean       清除静态缓存
-hexo g           生成博客文章
-hexo s           生成页面进行本地预览
-hexo d           部署博客文章<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201226111626436.png" alt="板娘效果显示图"></p>
+<h3 id="2、添加有趣Title"><a href="#2、添加有趣Title" class="headerlink" title="2、添加有趣Title"></a>2、添加有趣Title</h3><p>1.在主题下的<code>layout.ejs</code>文件添加如下内容</p>
+<pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%-</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>jsDelivr<span class="token punctuation">.</span>url </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%-</span><span class="token language-javascript"> <span class="token function">url_for</span><span class="token punctuation">(</span><span class="token string">'/js/FunnyTitle.js'</span><span class="token punctuation">)</span> </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<blockquote>
-<p>hexo s之后打开<a target="_blank" rel="noopener" href="http://localhost:4000/">localhost:4000</a>查看问题是否解决<br>OK后再执行hexo d部署到自己的博客</p>
-</blockquote>
-<h4 id="解决方案2"><a href="#解决方案2" class="headerlink" title="解决方案2"></a>解决方案2</h4><blockquote>
-<p>首先同样<br>在博客目录下git bash中按提示执行命令</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">npm i hexo<span class="token operator">-</span>generator<span class="token operator">-</span>json<span class="token operator">-</span>content <span class="token operator">--</span>save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.在主题下的<code>source</code>/<code>js</code>的文件夹创建一个<code>FunnyTitle.js</code>文件，文件里面内容如下</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> OriginTitle <span class="token operator">=</span> document<span class="token punctuation">.</span>title<span class="token punctuation">;</span>
+<span class="token keyword">var</span> titleTime<span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'visibilitychange'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>hidden<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'[rel="icon"]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'href'</span><span class="token punctuation">,</span> <span class="token string">"https://i.loli.net/2020/12/20/BZhvzONd8lgoFAI.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'ヾ(❀╹◡╹)ﾉ~我藏好了哦'</span><span class="token punctuation">;</span>
+        <span class="token function">clearTimeout</span><span class="token punctuation">(</span>titleTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'[rel="icon"]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'href'</span><span class="token punctuation">,</span> <span class="token string">"https://i.loli.net/2020/12/20/BZhvzONd8lgoFAI.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'（*＾ワ＾*）被你发现啦'</span> <span class="token operator">+</span> OriginTitle<span class="token punctuation">;</span>
+        titleTime <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            document<span class="token punctuation">.</span>title <span class="token operator">=</span> OriginTitle<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<blockquote>
-<p>若产生如下报错</p>
-</blockquote>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20200824231554764.png"></p>
-<blockquote>
-<p>则执行命令( 清除静态缓存)</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">hexo clean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20200824231812080.png"></p>
-<blockquote>
-<p>再执行命令</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">npm i <span class="token operator">-</span><span class="token class-name">S</span> hexo<span class="token operator">-</span>generator<span class="token operator">-</span>json<span class="token operator">-</span>content<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20200824231845268.png"></p>
-<blockquote>
-<p>若仍然产生报错</p>
-</blockquote>
-<blockquote>
-<p>则执行命令</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">npm i <span class="token operator">-</span><span class="token class-name">S</span> hexo<span class="token operator">-</span>generator<span class="token operator">-</span>json<span class="token operator">-</span>content  <span class="token operator">--</span>registry<span class="token operator">=</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>registry<span class="token punctuation">.</span>npm<span class="token punctuation">.</span>taobao<span class="token punctuation">.</span>org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>得到下图反馈表示插件安装成功</p>
-</blockquote>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20200824231936997.png"></p>
-<blockquote>
-<p>接着同样在根目录_config.yml配置下添加如下代码（原样复制粘贴即可）</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">jsonContent<span class="token operator">:</span>
-  meta<span class="token operator">:</span> <span class="token boolean">false</span>
-  pages<span class="token operator">:</span> <span class="token boolean">false</span>
-  posts<span class="token operator">:</span>
-    title<span class="token operator">:</span> <span class="token boolean">true</span>
-    date<span class="token operator">:</span> <span class="token boolean">true</span>
-    path<span class="token operator">:</span> <span class="token boolean">true</span>
-    text<span class="token operator">:</span> <span class="token boolean">false</span>
-    raw<span class="token operator">:</span> <span class="token boolean">false</span>
-    content<span class="token operator">:</span> <span class="token boolean">false</span>
-    slug<span class="token operator">:</span> <span class="token boolean">false</span>
-    updated<span class="token operator">:</span> <span class="token boolean">false</span>
-    comments<span class="token operator">:</span> <span class="token boolean">false</span>
-    link<span class="token operator">:</span> <span class="token boolean">false</span>
-    permalink<span class="token operator">:</span> <span class="token boolean">false</span>
-    excerpt<span class="token operator">:</span> <span class="token boolean">false</span>
-    categories<span class="token operator">:</span> <span class="token boolean">false</span>
-    tags<span class="token operator">:</span> <span class="token boolean">true</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>之后执行命令</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">hexo clean       清除静态缓存
-hexo g           生成博客文章
-hexo s           生成页面进行本地预览<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>hexo s之后打开<a target="_blank" rel="noopener" href="http://localhost:4000/">localhost:4000</a>查看问题是否解决<br>OK后再执行hexo d部署到自己的博客</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">hexo d           部署博客文章<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201226111334530.png" alt="离开页面的效果"></p>
+<p><img src="http://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201226111408673.png" alt="回到页面的效果"></p>
+<h3 id="操作完毕后，保存，hexo-g-d即可查看效果。"><a href="#操作完毕后，保存，hexo-g-d即可查看效果。" class="headerlink" title="操作完毕后，保存，hexo g -d即可查看效果。"></a>操作完毕后，保存，<code>hexo g -d</code>即可查看效果。</h3>
                 
             </div>
             <hr/>
@@ -952,7 +878,7 @@ hexo s           生成页面进行本地预览<span aria-hidden="true" class="l
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://nate-lin.github.io/2020/08/26/hexo-bo-ke-yilia-zhu-ti-suo-you-wen-zhang-mo-kuai-que-shi-jie-jue-fang-an-1/">https://nate-lin.github.io/2020/08/26/hexo-bo-ke-yilia-zhu-ti-suo-you-wen-zhang-mo-kuai-que-shi-jie-jue-fang-an-1/</a>
+                    <a href="https://nate-lin.github.io/2020/12/24/hexo-tian-jia-ban-niang-he-you-qu-title/">https://nate-lin.github.io/2020/12/24/hexo-tian-jia-ban-niang-he-you-qu-title/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -990,8 +916,8 @@ hexo s           生成页面进行本地预览<span aria-hidden="true" class="l
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
-                                    <span class="chip bg-color">个人博客</span>
+                                <a href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">技术笔记</span>
                                 </a>
                             
                         </div>
@@ -1428,25 +1354,24 @@ hexo s           生成页面进行本地预览<span aria-hidden="true" class="l
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/29/java-deng-lu-he-zhu-ce-hou-tai-shi-yong-yuan-ma/">
+                <a href="/2020/12/25/hexo-could-not-read-from-remote-repository-de-jie-jue-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java-登录和注册后台实用源码">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Hexo-Could not read from remote repository的解决方法">
                         
-                        <span class="card-title">Java-登录和注册后台实用源码</span>
+                        <span class="card-title">Hexo-Could not read from remote repository的解决方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            创建工程详情
-创建一个名字为“lgtest”的工程
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-29
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-25
                         </span>
                         <span class="publish-author">
                             
@@ -1478,31 +1403,31 @@ hexo s           生成页面进行本地预览<span aria-hidden="true" class="l
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/25/hexo-bo-ke-ji-cheng-ma-yun-ping-lun-xi-tong/">
+                <a href="/2020/12/24/hexo-dong-tai-deng-long-gua-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Hexo博客集成码云评论系统">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Hexo-动态灯笼挂件">
                         
-                        <span class="card-title">Hexo博客集成码云评论系统</span>
+                        <span class="card-title">Hexo-动态灯笼挂件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo博客集成码云评论系统Tips:前导必备
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/HEXO/" class="post-category">
-                                    HEXO
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
                                 </a>
                             
                             
@@ -1512,8 +1437,8 @@ hexo s           生成页面进行本地预览<span aria-hidden="true" class="l
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">个人博客</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">技术笔记</span>
                     </a>
                     
                 </div>
