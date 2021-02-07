@@ -820,7 +820,7 @@
 <ul>
 <li>如果是在生产环境中直接排查 JVM 的话，最简单的做法就是使用 JDK 自带的 6 个非常实用的命令行工具来排查。它们分别是：jps、jstat、jinfo、jmap、jhat 和 jstack，它们都位于 JDK 的 bin 目录下，可以使用命令行工具直接运行，其目录如下图所示：</li>
 </ul>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/187e03e5e1defd1c179cc8db478a853.png" alt="187e03e5e1defd1c179cc8db478a853"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/187e03e5e1defd1c179cc8db478a853.png"></p>
 <p>接下来我们来看看这些工具的具体使用。</p>
 <h4 id="1-jps（虚拟机进程状况工具）"><a href="#1-jps（虚拟机进程状况工具）" class="headerlink" title="1.jps（虚拟机进程状况工具）"></a>1.jps（虚拟机进程状况工具）</h4><p>jps（JVM Process Status tool，虚拟机进程状况工具）它的功能和 Linux 中的 ps 命令比较类似，用于列出正在运行的 JVM 的 LVMID（Local Virtual Machine IDentifier，本地虚拟机唯一 ID），以及 JVM 的执行主类、JVM 启动参数等信息。语法如下：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">jps <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">[</span>hostid<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1035,7 +1035,7 @@ PS <span class="token class-name">Old</span> <span class="token class-name">Gene
 
 
 <p>上述信息表示 jhat 启动了一个 http 的服务器端口为 7000 的站点来展示信息，此时我们在浏览器中输入：<a target="_blank" rel="noopener" href="http://localhost:7000/%EF%BC%8C%E4%BC%9A%E7%9C%8B%E5%88%B0%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E7%9A%84%E4%BF%A1%E6%81%AF%EF%BC%9A">http://localhost:7000/，会看到如下图所示的信息：</a></p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/f7a16f3ed843fb083d21bde35b644f8.png" alt="f7a16f3ed843fb083d21bde35b644f8"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/f7a16f3ed843fb083d21bde35b644f8.png"></p>
 <h4 id="6-jstack（查询虚拟机当前的线程快照信息）"><a href="#6-jstack（查询虚拟机当前的线程快照信息）" class="headerlink" title="6.jstack（查询虚拟机当前的线程快照信息）"></a>6.jstack（查询虚拟机当前的线程快照信息）</h4><p>jstack（Stack Trace for Java）用于查看当前虚拟机的线程快照，用它可以排查线程的执行状况，例如排查死锁、死循环等问题。</p>
 <p>比如，我们先写一段死锁的代码：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NativeOptimize</span> <span class="token punctuation">{</span>
@@ -1193,18 +1193,18 @@ JNI global references<span class="token operator">:</span> <span class="token nu
 <h3 id="知识扩展"><a href="#知识扩展" class="headerlink" title="知识扩展"></a>知识扩展</h3><hr>
 <h4 id="可视化排查工具"><a href="#可视化排查工具" class="headerlink" title="可视化排查工具"></a>可视化排查工具</h4><p>JVM 除了上面的 6 个基础命令行工具之外，还有两个重要的视图调试工具，即 JConsole 和 JVisualVM，它们相比于命令行工具使用更方便、操作更简单、结果展现也更直观。</p>
 <p>JConsole 和 JVisualVM 都位于 JDK 的 bin 目录下，JConsole（Java Monitoring and Management Console）是最早期的视图调试工具，其启动页面如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/97d8a19e3d7754eebb0ea714e31235d.png" alt="97d8a19e3d7754eebb0ea714e31235d"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/97d8a19e3d7754eebb0ea714e31235d.png"></p>
 <p>可以看出我们可以用它来连接远程的服务器，或者是直接调试本机，这样就可以在不消耗生产环境的性能下，从本机启动 JConsole 来连接服务器。选择了调试的进程之后，运行界面如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/5df6442ae06f47624c50e63d2523ded.png" alt="5df6442ae06f47624c50e63d2523ded"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/5df6442ae06f47624c50e63d2523ded.png"></p>
 <p>从上图可以看出，使用 JConsole 可以监控线程、CPU、类、堆以及 VM 的相关信息，同样我们可以通过线程这一页的信息，发现之前我们故意写的死锁问题，如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/CgqCHl7Z6amAF-LOAAKoeNJzszw795.png" alt="CgqCHl7Z6amAF-LOAAKoeNJzszw795"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/CgqCHl7Z6amAF-LOAAKoeNJzszw795.png"></p>
 <p>可以看到 main（主线程）和 Thread-0 线程处于死锁状态。</p>
 <p>JVisualVM 的启动图如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/CgqCHl7Z6a-AK0DMAAHTxm7JgYI402.png" alt="CgqCHl7Z6a-AK0DMAAHTxm7JgYI402"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/CgqCHl7Z6a-AK0DMAAHTxm7JgYI402.png"></p>
 <p>由上图可知，JVisualVM 既可以调试本地也可以调试远程服务器，当我们选择了相关的进程之后，运行如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/CgqCHl7Z6beAUJ6sAAMkaaTyA9U352.png" alt="CgqCHl7Z6beAUJ6sAAMkaaTyA9U352"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/CgqCHl7Z6beAUJ6sAAMkaaTyA9U352.png"></p>
 <p>可以看出 JVisualVM 除了包含了 JConsole 的信息之外，还有更多的详细信息，并且更加智能。例如，线程死锁检查的这页内容如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/Ciqc1F7Z6b2Aa8CCAANpsufYncw124.png" alt="Ciqc1F7Z6b2Aa8CCAANpsufYncw124"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/Ciqc1F7Z6b2Aa8CCAANpsufYncw124.png"></p>
 <p>可以看出 JVisualVM 会直接给你一个死锁的提示，而 JConsole 则需要程序员自己分析。</p>
 <h4 id="JVM-调优"><a href="#JVM-调优" class="headerlink" title="JVM 调优"></a>JVM 调优</h4><p>JVM 调优主要是根据实际的硬件配置信息重新设置 JVM 参数来进行调优的，例如，硬件的内存配置很高，但 JVM 因为是默认参数，所以最大内存和初始化堆内存很小，这样就不能更好地利用本地的硬件优势了。因此，需要调整这些参数，让 JVM 在固定的配置下发挥最大的价值。</p>
 <p>JVM 常见调优参数包含以下这些：</p>
@@ -2011,7 +2011,7 @@ TCP 协议是我们每天都在使用的一个网络通讯协议，因为绝大�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">118k</span>&nbsp;字
+                class="white-color">115.6k</span>&nbsp;字
             
             
             

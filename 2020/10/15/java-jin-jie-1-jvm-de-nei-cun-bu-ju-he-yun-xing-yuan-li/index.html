@@ -819,7 +819,7 @@
 <h4 id="典型回答"><a href="#典型回答" class="headerlink" title="典型回答"></a>典型回答</h4><hr>
 <p>JVM 的种类有很多，比如 HotSpot 虚拟机，它是 Sun/OracleJDK 和 OpenJDK 中的默认 JVM，也是目前使用范围最广的 JVM。我们常说的 JVM 其实泛指的是 HotSpot 虚拟机，还有曾经与 HotSpot 齐名为“三大商业 JVM”的 JRockit 和 IBM J9 虚拟机。但无论是什么类型的虚拟机都必须遵守 Oracle 官方发布的《Java虚拟机规范》，它是 Java 领域最权威最重要的著作之一，用于规范 JVM 的一些具体“行为”。</p>
 <p>同样对于 JVM 的内存布局也一样，根据《Java虚拟机规范》的规定，JVM 的内存布局分为以下几个部分：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201015161406947.png" alt="image-20201015161406947"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201015161406947.png"></p>
 <p><strong>以上 5 个内存区域的主要用途如下。</strong></p>
 <h5 id="1-堆"><a href="#1-堆" class="headerlink" title="1.堆"></a>1.堆</h5><p><strong>堆（Java Heap）</strong> 也叫 Java 堆或者是 GC 堆，它是一个线程共享的内存区域，也是 JVM 中占用内存最大的一块区域，Java 中所有的对象都存储在这里。</p>
 <p>《Java虚拟机规范》对 Java 堆的描述是：“所有的对象实例以及数组都应当在堆上分配”。但这在技术日益发展的今天已经有点不那么“准确”了，比如 JIT（Just In Time Compilation，即时编译 ）优化中的逃逸分析，使得变量可以直接在栈上被分配。</p>
@@ -867,7 +867,7 @@
 <li>卸载阶段（Unloading）</li>
 </ul>
 <p>其中验证、准备、解析 3 个阶段统称为<strong>连接（Linking）</strong>，如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201015162013572.png" alt="image-20201015162013572"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201015162013572.png"></p>
 <p>我们平常所说的 JVM 类加载通常指的就是前五个阶段：加载、验证、准备、解析、初始化等，接下来我们分别来看看。</p>
 <h5 id="1-加载阶段"><a href="#1-加载阶段" class="headerlink" title="1.加载阶段"></a>1.加载阶段</h5><p>此阶段用于查到相应的类（通过类名进行查找）并将此类的字节流转换为方法区运行时的数据结构，然后再在内存中生成一个能代表此类的 java.lang.Class 对象，作为其他数据访问的入口。</p>
 <blockquote>
@@ -1681,7 +1681,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">118k</span>&nbsp;字
+                class="white-color">115.6k</span>&nbsp;字
             
             
             

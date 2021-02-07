@@ -833,14 +833,14 @@
 <p>关系型数据库一般遵循三范式设计思想，具体内容如下。</p>
 <p><strong>第一范式（The First Normal Form，1NF）</strong>：要求对属性的原子性，也就是说要求数据库中的字段需要具备原子性，不能再被拆分。</p>
 <p>比如，用户表中有字段：用户 ID、用户名、电话；而其中电话又可以分为：家庭电话和移动电话等。因此，此表不符合第一范式，如下图所示：</p>
-<p><img src="https://s0.lgstatic.com/i/image/M00/04/EE/Ciqc1F609LGAVe-VAACjotekkQg824.png" alt="image (9).png"></p>
+<p><img src="https://s0.lgstatic.com/i/image/M00/04/EE/Ciqc1F609LGAVe-VAACjotekkQg824.png"></p>
 <p><strong>第二范式（The Second Normal Form，2NF）</strong>：例如订单详情表有这些字段：订单 ID、产品 ID、产品名称、产品单价、折扣。其中，订单 ID 和产品 ID 为联合主键，但这个表中的产品名称和产品单价两个字段只依赖产品 ID，和订单 ID 就没有任何关系了，因此这个表也不符合第二范式。</p>
 <p>我们可以把原来的订单表拆分为订单表和产品表，其中订单表包含：订单 ID、产品 ID、折扣等字段；而产品表包含：产品 ID、产品名称、产品单价等字段。这样就消除了产品名称和产品单价多次重复出现的情况了，从而避免了冗余数据的产生。</p>
-<p><img src="https://s0.lgstatic.com/i/image/M00/04/EE/CgqCHl609MKAFYSYAADJf5bDe60684.png" alt="image (10).png"></p>
+<p><img src="https://s0.lgstatic.com/i/image/M00/04/EE/CgqCHl609MKAFYSYAADJf5bDe60684.png"></p>
 <p><strong>第三范式（The Third Normal Form，3NF）</strong>：想要满足第三范式必须先满足第二范式，第三范式要求所有的非主键字段必须直接依赖主键，且不存在传递依赖的情况。</p>
 <p>例如，有一个学生表中包含了：学生 ID、姓名、所在学院 ID、学院电话、学院地址等字段。这个表的所有字段（除去主键字段）都完全依赖唯一的主键字段（学生 ID），所以符合第二范式。但它存在一个问题，学院电话、学院地址依赖非主键字段学院 ID，而不是直接依赖于主键，它是通过传递才依赖于主键，所以不符合第三范式。</p>
 <p>我们可以把学生表分为两张表，一张是学生表包含了：学生 ID、姓名、所在学院 ID 等字段；另一张为学院表包含了：学院 ID、学院电话、学院地址等字段，这样就满足第三范式的要求了。</p>
-<p><img src="https://s0.lgstatic.com/i/image/M00/04/EE/Ciqc1F609NeAe9auAADiqrkjytE051.png" alt="image (11).png"></p>
+<p><img src="https://s0.lgstatic.com/i/image/M00/04/EE/Ciqc1F609NeAe9auAADiqrkjytE051.png"></p>
 <p>可以看出，使用三范式可以避免数据的冗余，而且在更新表操作时，只需要更新单张表就可以了。</p>
 <p>但随着互联网应用的快速发展，我们需要应对日益复杂且快速迭代的数据库，以应对互联网快速发展的趋势，于是诞生了以 MongoDB 为代表的文档型数据库。它提供了更高效的读/写性能以及可自动容灾的数据库集群，还有灵活的数据库结构，从而给系统的数据库存储带来了更多可能 性。</p>
 <p>当然 MongoDB 的诞生并不是为了替代关系型数据库，而是为系统的快速开发提供一种可能性，它和关系型数据库是一种互补的关系，可供开发者在不同的业务场景下选择相对应的数据库类型。</p>
@@ -1428,24 +1428,24 @@ Redis 和 MySQL 是面试绕不过的两座大山，他们一个是关系型数�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/25/shu-ju-ku-3-guan-xi-xing-shu-ju-he-wen-dang-xing-shu-ju-ku-you-shi-me-qu-bie/">
+                <a href="/2020/09/24/shu-ju-ku-2-mysql-de-you-hua-fang-an-you-na-xie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="数据库3-关系型数据和文档型数据库有什么区别">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="数据库2-MySQL 的优化方案有哪些">
                         
-                        <span class="card-title">数据库3-关系型数据和文档型数据库有什么区别</span>
+                        <span class="card-title">数据库2-MySQL 的优化方案有哪些</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关系型数据和文档型数据库有什么区别？关系数据库（Relational Database）是建立在关系模型基础上的数据库，借助于几何代数等数学概念和方法来处理数据库中的数据。所谓关系模型是一对一、一对多或者多对多等关系，常见的关系型数据库有 
+                            MySQL 的优化方案有哪些？性能优化（Optimize）指的是在保证系统正确性的前提下，能够更快速响应请求的一种手段。而且有些性能问题，比如慢查询等，如果积累到一定的程度或者是遇到急速上升的并发请求之后，会导致严重的后果，轻则造成服务繁忙
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-24
                             </span>
                         <span class="publish-author">
                             
@@ -1666,7 +1666,7 @@ Redis 和 MySQL 是面试绕不过的两座大山，他们一个是关系型数�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">118k</span>&nbsp;字
+                class="white-color">115.6k</span>&nbsp;字
             
             
             

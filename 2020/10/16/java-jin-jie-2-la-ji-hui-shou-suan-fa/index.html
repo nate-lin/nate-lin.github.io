@@ -853,7 +853,7 @@
 
 <p>即使 one 和 two 都为 null，但因为循环引用的问题，两个对象都不能被垃圾收集器所回收。</p>
 <p>可达性分析算法（Reachability Analysis） 是目前商业系统中所采用的判断对象死亡的常用算法，它是指从对象的起点（GC Roots）开始向下搜索，如果对象到 GC Roots 没有任何引用链相连时，也就是说此对象到 GC Roots 不可达时，则表示此对象可以被垃圾回收器所回收，如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201016164214409.png" alt="image-20201016164214409"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201016164214409.png"></p>
 <p>当确定了对象的状态之后（存活还是死亡）接下来就是进行垃圾回收了，垃圾回收的常见算法有以下几个：</p>
 <ul>
 <li>标记-清除算法；</li>
@@ -862,13 +862,13 @@
 </ul>
 <p><strong>标记-清除（Mark-Sweep）算法</strong>属于最早的垃圾回收算法，它是由标记阶段和清除阶段构成的。标记阶段会给所有的存活对象做上标记，而清除阶段会把没有被标记的死亡对象进行回收。而标记的判断方法就是前面讲的引用计数算法和可达性分析算法。</p>
 <p>标记-清除算法的执行流程如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201016164342823.png" alt="image-20201016164342823"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201016164342823.png"></p>
 <p>从上图可以看出，标记-清除算法有一个最大的问题就是会产生内存空间的碎片化问题，也就是说标记-清除算法执行完成之后会产生大量的不连续内存，这样当程序需要分配一个大对象时，因为没有足够的连续内存而导致需要提前触发一次垃圾回收动作。</p>
 <p><strong>标记-复制算法</strong>是标记-清除算法的一个升级，使用它可以有效地解决内存碎片化的问题。它是指将内存分为大小相同的两块区域，每次只使用其中的一块区域，这样在进行垃圾回收时就可以直接将存活的东西复制到新的内存上，然后再把另一块内存全部清理掉。这样就不会产生内存碎片的问题了，其执行流程如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201016164439981.png" alt="image-20201016164439981"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201016164439981.png"></p>
 <p>标记-复制的算法虽然可以解决内存碎片的问题，但同时也带来了新的问题。因为需要将内存分为大小相同的两块内存，那么内存的实际可用量其实只有原来的一半，这样此算法导致了内存的可用率大幅降低了。</p>
 <p>标记-整理算法的诞生晚于标记-清除算法和标记-复制算法，它也是由两个阶段组成的：标记阶段和整理阶段。其中标记阶段和标记-清除算法的标记阶段一样，不同的是后面的一个阶段，标记-整理算法的后一个阶段不是直接对内存进行清除，而是把所有存活的对象移动到内存的一端，然后把另一端的所有死亡对象全部清除，执行流程图如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201016164554091.png" alt="image-20201016164554091"></p>
+<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/image-20201016164554091.png"></p>
 <h4 id="考点分析"><a href="#考点分析" class="headerlink" title="考点分析"></a>考点分析</h4><hr>
 <p>本题目考察的是关于垃圾收集的一些理论算法问题，都属于概念性的问题，只要深入理解之后还是挺容易记忆的。和此知识点相关的面试题还有这些：</p>
 <ul>
@@ -1718,7 +1718,7 @@ JVM（Java Virtual Machine，Java 虚拟机）顾名思义就是用来执行 Jav
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">118k</span>&nbsp;字
+                class="white-color">115.6k</span>&nbsp;字
             
             
             

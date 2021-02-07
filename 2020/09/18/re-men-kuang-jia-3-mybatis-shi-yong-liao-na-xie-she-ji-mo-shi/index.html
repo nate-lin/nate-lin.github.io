@@ -909,7 +909,7 @@
 <p>可以看出 ErrorContext 使用 private 修饰的 ThreadLocal 来保证每个线程拥有一个 ErrorContext 对象，在调用 instance() 方法时再从 ThreadLocal 中获取此单例对象。</p>
 <h5 id="4-适配器模式"><a href="#4-适配器模式" class="headerlink" title="4.适配器模式"></a>4.适配器模式</h5><p>适配器模式是指将一个不兼容的接口转换成另一个可以兼容的接口，这样就可以使那些不兼容的类可以一起工作。</p>
 <p>例如，最早之前我们用的耳机都是圆形的，而现在大多数的耳机和电源都统一成了方形的 typec 接口，那之前的圆形耳机就不能使用了，只能买一个适配器把圆形接口转化成方形的，如下图所示：</p>
-<p><img src="https://s0.lgstatic.com/i/image3/M01/13/8A/Ciqah16f6OqAIKAYAADKCLdmqIs159.png" alt="面试1.png"></p>
+<p><img src="https://s0.lgstatic.com/i/image3/M01/13/8A/Ciqah16f6OqAIKAYAADKCLdmqIs159.png"></p>
 <p>而这个转换头就相当于程序中的适配器模式，适配器模式在 MyBatis 中的典型代表是 Log。</p>
 <p>MyBatis 中的日志模块适配了以下多种日志类型：</p>
 <ul>
@@ -974,7 +974,7 @@
 
 
 <p>这样当你项目中添加了 Log4j2 时，MyBatis 就可以直接使用它打印 MyBatis 的日志信息了。Log 的所有子类如下图所示：</p>
-<p><img src="https://s0.lgstatic.com/i/image3/M01/13/7A/Ciqah16f2v2AeeNMAAFjYUNVZ4Q221.png" alt="面试2.png"></p>
+<p><img src="https://s0.lgstatic.com/i/image3/M01/13/7A/Ciqah16f2v2AeeNMAAFjYUNVZ4Q221.png"></p>
 <h5 id="5-代理模式"><a href="#5-代理模式" class="headerlink" title="5.代理模式"></a>5.代理模式</h5><p>代理模式指的是给某一个对象提供一个代理对象，并由代理对象控制原对象的调用。</p>
 <p>代理模式在生活中也比较常见，比如我们常见的超市、小卖店其实都是一个个“代理”，他们的最上游是一个个生产厂家，他们这些代理负责把厂家生产出来的产品卖出去。</p>
 <p>代理模式在 MyBatis 中的典型代表是 MapperProxyFactory。</p>
@@ -1015,7 +1015,7 @@
 <p>整个过程都是固定的，唯一变的就是泡入茶叶种类的不同，比如今天喝的是绿茶，明天可能喝的是红茶，那么我们就可以把流程定义为一个模板，而把茶叶的种类延伸到子类中去实现，这就是模板方法的实现思路。</p>
 <p>模板方法在 MyBatis 中的典型代表是 BaseExecutor。</p>
 <p>在 MyBatis 中 BaseExecutor 实现了大部分 SQL 执行的逻辑，然后再把几个方法交给子类来实现，它的继承关系如下图所示：</p>
-<p><img src="https://s0.lgstatic.com/i/image3/M01/06/4C/CgoCgV6f2wyAULMBAABm_m36wXw649.png" alt="面试3.png"></p>
+<p><img src="https://s0.lgstatic.com/i/image3/M01/06/4C/CgoCgV6f2wyAULMBAABm_m36wXw649.png"></p>
 <p>比如 doUpdate() 就是交给子类自己去实现的，它在 BaseExecutor 中的定义如下：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">protected</span> <span class="token keyword">abstract</span> <span class="token keyword">int</span> <span class="token function">doUpdate</span><span class="token punctuation">(</span><span class="token class-name">MappedStatement</span> ms<span class="token punctuation">,</span> <span class="token class-name">Object</span> parameter<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">SQLException</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -1066,7 +1066,7 @@
 <p>装饰器模式在生活中很常见，比如装修房子，我们在不改变房子结构的同时，给房子添加了很多的点缀；比如安装了天然气报警器，增加了热水器等附加的功能都属于装饰器模式。</p>
 <p>装饰器模式在 MyBatis 中的典型代表是 Cache。</p>
 <p>Cache 除了有数据存储和缓存的基本功能外（由 PerpetualCache 永久缓存实现），还有其他附加的 Cache 类，比如先进先出的 FifoCache、最近最少使用的 LruCache、防止多线程并发访问的 SynchronizedCache 等众多附加功能的缓存类，Cache 所有实现子类如下图所示：</p>
-<p><img src="https://s0.lgstatic.com/i/image3/M01/06/4C/CgoCgV6f2yOAeRJoAACY-E2QwcM337.png" alt="面试4.png"></p>
+<p><img src="https://s0.lgstatic.com/i/image3/M01/06/4C/CgoCgV6f2yOAeRJoAACY-E2QwcM337.png"></p>
 <h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><hr>
 <p>本文章重点讲了 MyBatis 源码中的几个主要设计模式，即工厂模式、建造者模式、单例模式、适配器模式、代理模式、模板方法模式等，希望本课时的内容能起到抛砖引玉的作用，对你理解设计模式和 MyBatis 提供一些帮助，如果想要阅读全部的 MyBatis 源码可以访问：<a target="_blank" rel="noopener" href="https://github.com/mybatis/mybatis-3">https://github.com/mybatis/mybatis-3</a> 。</p>
 
@@ -1861,7 +1861,7 @@ IoC（Inversion of Control，翻译为“控制反转”）不是一个具体的
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">118k</span>&nbsp;字
+                class="white-color">115.6k</span>&nbsp;字
             
             
             
