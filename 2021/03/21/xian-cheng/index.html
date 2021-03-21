@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java基础10-如何手写一个消息队列和延迟消息队列, 浅悦的编程时光">
+    <meta name="keywords" content="线程, 浅悦的编程时光">
     <meta name="description" content=" ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -25,7 +25,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java基础10-如何手写一个消息队列和延迟消息队列 | 浅悦的编程时光</title>
+    <title>线程 | 浅悦的编程时光</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -625,12 +625,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java基础10-如何手写一个消息队列和延迟消息队列</h1>
+                    <h1 class="description center-align post-title">线程</h1>
                 </div>
             </div>
         </div>
@@ -744,25 +744,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Java%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">Java基础</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
-                                面试
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -771,7 +758,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-12
+                    2021-03-21
                 </div>
                 
 
@@ -780,14 +767,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    0
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    1 分
                 </div>
                 
 
@@ -810,246 +797,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="如何手写一个消息队列和延迟消息队列？"><a href="#如何手写一个消息队列和延迟消息队列？" class="headerlink" title="如何手写一个消息队列和延迟消息队列？"></a>如何手写一个消息队列和延迟消息队列？</h3><blockquote>
-<p>第一次听到“消息队列”这个词时，不知你是不是和我反应一样，感觉很高阶很厉害的样子，其实当我们了解了消息队列之后，发现它与普通的技术类似，当我们熟悉之后，也能很快地上手并使用。</p>
-</blockquote>
-<a id="more"></a>
-
-<p><strong>本文章的面试题是，消息队列的使用场景有哪些？如何手动实现一个消息队列和延迟消息队列？</strong></p>
-<hr>
-<h4 id="典型回答"><a href="#典型回答" class="headerlink" title="典型回答"></a><strong>典型回答</strong></h4><h5 id="消息队列的使用场景有很多，最常见的使用场景有以下几个。"><a href="#消息队列的使用场景有很多，最常见的使用场景有以下几个。" class="headerlink" title="消息队列的使用场景有很多，最常见的使用场景有以下几个。"></a>消息队列的使用场景有很多，最常见的使用场景有以下几个。</h5><h6 id="1-商品秒杀"><a href="#1-商品秒杀" class="headerlink" title="1.商品秒杀"></a>1.商品秒杀</h6><hr>
-<ul>
-<li>比如，我们在做秒杀活动时，会发生短时间内出现爆发式的用户请求，如果不采取相关的措施，会导致服务器忙不过来，响应超时的问题，轻则会导致服务假死，重则会让服务器直接宕机，给用户带来的体验也非常不好。如果这个时候加上了消息队列，服务器接收到用户的所有请求后，先把这些请求全部写入到消息队列中再排队处理，这样就不会导致同时处理多个请求的情况；如果消息队列长度超过可以承载的最大数量，那么我们可以抛弃当前用户的请求，通知前台用户“页面出错啦，请重新刷新”等提示，这样就会有更好的交互体验。</li>
-</ul>
-<h6 id="2-系统解耦"><a href="#2-系统解耦" class="headerlink" title="2.系统解耦"></a>2.系统解耦</h6><hr>
-<ul>
-<li><p>使用了消息队列之后，我们可以把系统的业务功能模块化，实现系统的解耦。例如，在没有使用消息队列之前，当前台用户完善了个人信息之后，首先我们需要更新用户的资料，再添加一条用户信息修改日志。但突然有一天产品经理提了一个需求，在前台用户信息更新之后，需要给此用户的增加一定的积分奖励，然后没过几天产品经理又提了一个需求，在前台用户信息更新之后，不但要增加积分奖励，还要增加用户的经验值，但没过几天产品经理的需求又变了，他要求完善资料无需增加用户的积分了，这样反反复复、来来回回的折腾，我想研发的同学一定受不了，但这是互联网公司的常态，那我们有没有一劳永逸的办法呢？</p>
-</li>
-<li><p>没错，这个时候我们想到了使用消息队列来实现系统的解耦，每个功能的实现独立开，只需要一个订阅或者取消订阅的开关就可以了，当需要增加功能时，只需要打开订阅“用户信息完善”的队列就行，如果过两天不用了，再把订阅的开关关掉就行了，这样我们就不用来来回回的改业务代码了，也就轻松的实现了系统模块间的解耦。</p>
-</li>
-</ul>
-<h6 id="3-日志记录"><a href="#3-日志记录" class="headerlink" title="3.日志记录"></a>3.日志记录</h6><hr>
-<ul>
-<li><p>我们大部分的日志记录行为其实是和前台用户操作的主业务没有直接关系的，只是我们的运营人和经营人员需要拿到这部分用户操作的日志信息，来进行用户行为分析或行为监控。在我们没有使用消息队列之前，笼统的做法是当有用户请求时，先处理用户的请求再记录日志，这两个操作是放在一起的，而前台用户也需要等待日志添加完成之后才能拿到后台的响应信息，这样其实浪费了前台用户的部分时间。此时我们可以使用消息队列，当响应完用户请求之后，只需要把这个操作信息放入消息队列之后，就可以直接返回结果给前台用户了，无序等待日志处理和日志添加完成，从而缩短了前台用户的等待时间。</p>
-</li>
-<li><p>我们可以通过 JDK 提供的 Queue 来实现自定义消息队列，使用 DelayQueue 实现延迟消息队列。</p>
-</li>
-</ul>
-<h4 id="考点分析"><a href="#考点分析" class="headerlink" title="考点分析"></a><strong>考点分析</strong></h4><hr>
-<ul>
-<li><p>对于消息队列的考察更侧重于消息队列的核心思想，因为只有理解了什么是消息队列？以及什么情况下要用消息队列？才能解决我们日常工作中遇到的问题，而消息队列的具体实现，只需要掌握一个消息中间件的使用即可，因为消息队列中间件的核心实现思路是一致的，不但如此，消息队列中间件的使用也大致类似，只要掌握了一个就能触类旁通的用好其他消息中间件。</p>
-</li>
-<li><p>和本文章相关的面试题，还有以下这两个：</p>
-<ul>
-<li>介绍一个你熟悉的消息中间件？</li>
-<li>如何手动实现消息队列？</li>
-</ul>
-</li>
-</ul>
-<h4 id="知识扩展"><a href="#知识扩展" class="headerlink" title="知识扩展"></a><strong>知识扩展</strong></h4><hr>
-<h5 id="1-常用消息中间件-RabbitMQ"><a href="#1-常用消息中间件-RabbitMQ" class="headerlink" title="1.常用消息中间件 RabbitMQ"></a><strong>1.常用消息中间件 RabbitMQ</strong></h5><hr>
-<blockquote>
-<p>目前市面上比较常用的 MQ（Message Queue，消息队列）中间件有 RabbitMQ、Kafka、RocketMQ，如果是轻量级的消息队列可以使用 Redis 提供的消息队列，本课时我们先来介绍一下 RabbitMQ，其他消息中间件将会在第 15 课时中单独介绍。</p>
-</blockquote>
-<blockquote>
-<p>RabbitMQ 是一个老牌开源的消息中间件，它实现了标准的 AMQP（Advanced Message Queuing Protocol，高级消息队列协议）消息中间件，使用 Erlang 语言开发，支持集群部署，和多种客户端语言混合调用，它支持的主流开发语言有以下这些：</p>
-</blockquote>
-<ul>
-<li><p>Java and Spring</p>
-</li>
-<li><p>.NET</p>
-</li>
-<li><p>Ruby</p>
-</li>
-<li><p>Python</p>
-</li>
-<li><p>PHP</p>
-</li>
-<li><p>JavaScript and Node</p>
-</li>
-<li><p>Objective-C and Swift</p>
-</li>
-<li><p>Rust</p>
-</li>
-<li><p>Scala</p>
-</li>
-<li><p>Go</p>
-</li>
-</ul>
-<p>更多支持语言，<a target="_blank" rel="noopener" href="https://www.rabbitmq.com/devtools.html">请点击这里访问官网</a>查看。</p>
-<blockquote>
-<p>RabbitMQ 中有 3 个重要的概念：生产者、消费者和代理。</p>
-</blockquote>
-<ul>
-<li>生产者：消息的创建者，负责创建和推送数据到消息服务器。</li>
-<li>消费者：消息的接收方，用于处理数据和确认消息。</li>
-<li>代理：也就是 RabbitMQ 服务本身，它用于扮演“快递”的角色，因为它本身并不生产消息，只是扮演了“快递”的角色，把消息进行暂存和传递。</li>
-</ul>
-<p>它们的运行流程，如下图所示：</p>
-<p><img src="https://blog-lin1.oss-cn-shenzhen.aliyuncs.com/img/Ciqah16QOkmAX3_TAABZ5pEPvmQ772.png"></p>
-<blockquote>
-<p>RabbitMQ 具备以下几个优点：</p>
-</blockquote>
-<ul>
-<li><strong>支持持久化</strong>，RabbitMQ 支持磁盘持久化功能，保证了消息不会丢失；</li>
-<li><strong>高并发</strong>，RabbitMQ 使用了 Erlang 开发语言，Erlang 是为电话交换机开发的语言，天生自带高并发光环和高可用特性；</li>
-<li><strong>支持分布式集群</strong>，正是因为 Erlang 语言实现的，因此 RabbitMQ 集群部署也非常简单，只需要启动每个节点并使用 –link 把节点加入到集群中即可，并且 RabbitMQ 支持自动选主和自动容灾；</li>
-<li><strong>支持多种语言</strong>，比如 Java、.NET、PHP、Python、JavaScript、Ruby、Go 等；</li>
-<li><strong>支持消息确认</strong>，支持消息消费确认（ack）保证了每条消息可以被正常消费；</li>
-<li><strong>它支持很多插件</strong>，比如网页控制台消息管理插件、消息延迟插件等，RabbitMQ 的插件很多并且使用都很方便。</li>
-</ul>
-<blockquote>
-<p>RabbitMQ 的消息类型，分为以下四种：</p>
-</blockquote>
-<ul>
-<li><strong>direct</strong>（默认类型）模式，此模式为一对一的发送方式，也就是一条消息只会发送给一个消费者；</li>
-<li>**headers **模式，允许你匹配消息的 header 而非路由键（RoutingKey），除此之外 headers 和 direct 的使用完全一致，但因为 headers 匹配的性能很差，几乎不会被用到；</li>
-<li><strong>fanout</strong> 模式，为多播的方式，会把一个消息分发给所有的订阅者；</li>
-<li><strong>topic</strong> 模式，为主题订阅模式，允许使用通配符（#、*）匹配一个或者多个消息，我可以使用“cn.mq.#”匹配到多个前缀是“cn.mq.xxx”的消息，比如可以匹配到“cn.mq.rabbit”、“cn.mq.kafka”等消息。</li>
-</ul>
-<h5 id="2-自定义消息队列"><a href="#2-自定义消息队列" class="headerlink" title="2.自定义消息队列"></a><strong>2.自定义消息队列</strong></h5><hr>
-<p>我们可使用 Queue 来实现消息队列，Queue 大体可分为以下三类：</p>
-<ul>
-<li><strong>双端队列（Deque）</strong>是 Queue 的子类也是 Queue 的补充类，头部和尾部都支持元素插入和获取；</li>
-<li><strong>阻塞队列</strong>指的是在元素操作时（添加或删除），如果没有成功，会阻塞等待执行，比如当添加元素时，如果队列元素已满，队列则会阻塞等待直到有空位时再插入；</li>
-<li><strong>非阻塞队列</strong>，和阻塞队列相反，它会直接返回操作的结果，而非阻塞等待操作，双端队列也属于非阻塞队列。</li>
-</ul>
-<p>自定义消息队列的实现代码如下：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">LinkedList</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Queue</span><span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomQueue</span> <span class="token punctuation">{</span>
-    <span class="token comment">// 定义消息队列</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Queue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">producer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用生产者</span>
-    <span class="token function">consumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用消费者</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 生产者</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">producer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// 添加消息</span>
-    queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"first message."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"second message."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"third message."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 消费者</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">consumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>queue<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment">// 消费消息</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<p>以上程序的执行结果是：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">first message<span class="token punctuation">.</span>
-second message<span class="token punctuation">.</span>
-third message<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>可以看出消息是以先进先出顺序进行消费的。</p>
-<p>实现自定义延迟队列需要实现 Delayed 接口，重写 getDelay() 方法，延迟队列完整实现代码如下：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">Getter</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">Setter</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>text<span class="token punctuation">.</span></span><span class="token class-name">DateFormat</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Date</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">DelayQueue</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">Delayed</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">TimeUnit</span><span class="token punctuation">;</span>
-
-
-<span class="token comment">/**
-
- * 自定义延迟队列
-   */</span>
-   <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomDelayQueue</span> <span class="token punctuation">{</span>
-   <span class="token comment">// 延迟消息队列</span>
-   <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">DelayQueue</span> delayQueue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DelayQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">{</span>
-       <span class="token function">producer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用生产者</span>
-       <span class="token function">consumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用消费者</span>
-   <span class="token punctuation">}</span>
-
-   <span class="token comment">// 生产者</span>
-   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">producer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       <span class="token comment">// 添加消息</span>
-       delayQueue<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyDelay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token string">"消息1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-       delayQueue<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyDelay</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token string">"消息2"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-
-   <span class="token comment">// 消费者</span>
-   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">consumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">{</span>
-       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"开始执行时间："</span> <span class="token operator">+</span>
-               <span class="token class-name">DateFormat</span><span class="token punctuation">.</span><span class="token function">getDateTimeInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-       <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>delayQueue<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-           <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>delayQueue<span class="token punctuation">.</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-       <span class="token punctuation">}</span>
-       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"结束执行时间："</span> <span class="token operator">+</span>
-               <span class="token class-name">DateFormat</span><span class="token punctuation">.</span><span class="token function">getDateTimeInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-
-   <span class="token comment">/**
-
-    * 自定义延迟队列
-      */</span>
-      <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">MyDelay</span> <span class="token keyword">implements</span> <span class="token class-name">Delayed</span> <span class="token punctuation">{</span>
-      <span class="token comment">// 延迟截止时间（单位：毫秒）</span>
-      <span class="token keyword">long</span> delayTime <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-      <span class="token comment">// 借助 lombok 实现</span>
-      <span class="token annotation punctuation">@Getter</span>
-      <span class="token annotation punctuation">@Setter</span>
-      <span class="token keyword">private</span> <span class="token class-name">String</span> msg<span class="token punctuation">;</span>
-
-      <span class="token comment">/**
-
-       * 初始化
-       * @param delayTime 设置延迟执行时间
-       * @param msg       执行的消息
-         */</span>
-         <span class="token keyword">public</span> <span class="token class-name">MyDelay</span><span class="token punctuation">(</span><span class="token keyword">long</span> delayTime<span class="token punctuation">,</span> <span class="token class-name">String</span> msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         <span class="token keyword">this</span><span class="token punctuation">.</span>delayTime <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>delayTime <span class="token operator">+</span> delayTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
-         <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
-         <span class="token punctuation">}</span>
-
-      <span class="token comment">// 获取剩余时间</span>
-      <span class="token annotation punctuation">@Override</span>
-      <span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">getDelay</span><span class="token punctuation">(</span><span class="token class-name">TimeUnit</span> unit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token keyword">return</span> unit<span class="token punctuation">.</span><span class="token function">convert</span><span class="token punctuation">(</span>delayTime <span class="token operator">-</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>MILLISECONDS<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-
-      <span class="token comment">// 队列里元素的排序依据</span>
-      <span class="token annotation punctuation">@Override</span>
-      <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">Delayed</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getDelay</span><span class="token punctuation">(</span><span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>MILLISECONDS<span class="token punctuation">)</span> <span class="token operator">&gt;</span> o<span class="token punctuation">.</span><span class="token function">getDelay</span><span class="token punctuation">(</span><span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>MILLISECONDS<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-              <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getDelay</span><span class="token punctuation">(</span><span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>MILLISECONDS<span class="token punctuation">)</span> <span class="token operator">&lt;</span> o<span class="token punctuation">.</span><span class="token function">getDelay</span><span class="token punctuation">(</span><span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>MILLISECONDS<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-              <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-              <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-
-      <span class="token annotation punctuation">@Override</span>
-      <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>以上程序的执行结果是：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">开始执行时间：<span class="token number">2020</span><span class="token operator">-</span><span class="token number">8</span><span class="token operator">-</span><span class="token number">11</span> <span class="token number">16</span><span class="token operator">:</span><span class="token number">17</span><span class="token operator">:</span><span class="token number">28</span>
-消息<span class="token number">1</span>
-消息<span class="token number">2</span>
-结束执行时间：<span class="token number">2020</span><span class="token operator">-</span><span class="token number">8</span><span class="token operator">-</span><span class="token number">11</span> <span class="token number">16</span><span class="token operator">:</span><span class="token number">17</span><span class="token operator">:</span><span class="token number">31</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>可以看出，消息 1 和消息 2 都实现了延迟执行的功能。</p>
-<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><hr>
-<p>本文章讲了消息队列的使用场景：商品秒杀、系统解耦和日志记录，我们还介绍了 RabbitMQ 以及它的消息类型和它的特点等内容，同时还使用 Queue 的子类 LinkedList 实现了自定义消息队列，使用 DelayQueue 实现了自定义延迟消息队列。</p>
-
+                
                 
             </div>
             <hr/>
@@ -1075,7 +823,7 @@ third message<span class="token punctuation">.</span><span aria-hidden="true" cl
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://nate-lin.github.io/2020/08/12/java-ji-chu-10-ru-he-shou-xie-yi-ge-xiao-xi-dui-lie-he-yan-chi-xiao-xi-dui-lie/">https://nate-lin.github.io/2020/08/12/java-ji-chu-10-ru-he-shou-xie-yi-ge-xiao-xi-dui-lie-he-yan-chi-xiao-xi-dui-lie/</a>
+                    <a href="https://nate-lin.github.io/2021/03/21/xian-cheng/">https://nate-lin.github.io/2021/03/21/xian-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1112,11 +860,7 @@ third message<span class="token punctuation">.</span><span aria-hidden="true" cl
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Java%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">Java基础</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1547,49 +1291,39 @@ third message<span class="token punctuation">.</span><span aria-hidden="true" cl
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/08/25/hexo-bo-ke-ji-cheng-ma-yun-ping-lun-xi-tong/">
+                <a href="/2021/03/21/xian-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Hexo博客集成码云评论系统">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="线程">
                         
-                        <span class="card-title">Hexo博客集成码云评论系统</span>
+                        <span class="card-title">线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo博客集成码云评论系统Tips:前导必备
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/HEXO/" class="post-category">
-                                    HEXO
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            浅  悦
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">个人博客</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1600,33 +1334,31 @@ third message<span class="token punctuation">.</span><span aria-hidden="true" cl
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/07/java-ji-chu-9-ru-he-shi-xian-ben-di-huan-cun-he-fen-bu-shi-huan-cun/">
+                <a href="/2021/02/08/java-duo-xian-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Java基础9-如何实现本地缓存和分布式缓存">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Java-多线程">
                         
-                        <span class="card-title">Java基础9-如何实现本地缓存和分布式缓存</span>
+                        <span class="card-title">Java-多线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如何实现本地缓存和分布式缓存？
-缓存（Cache）是指将程序或系统中常用的数据对象存储在像内存这样特定的介质中，以避免在每次程序调用时，重新创建或组织数据所带来的性能损耗，从而提高了系统的整体运行速度。
-
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
-                                    面试
+                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    基础知识
                                 </a>
                             
                             
@@ -1636,8 +1368,8 @@ third message<span class="token punctuation">.</span><span aria-hidden="true" cl
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">Java基础</span>
+                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Java笔记</span>
                     </a>
                     
                 </div>
