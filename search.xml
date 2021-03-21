@@ -8,7 +8,7 @@
       <link href="2021/03/21/xian-cheng/"/>
       <url>2021/03/21/xian-cheng/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h3 id="线程基本要求"><a href="#线程基本要求" class="headerlink" title="线程基本要求"></a>线程基本要求</h3><ul><li>能够描述Java中多线程运行原理</li><li>能够使用继承类的方式创建多线程</li><li>能够使用实现接口的方式创建多线程</li><li>能够解释安全问题的出现的原因</li><li>能够使用同步代码解决线程安全问题</li><li>能够说出线程6个状态的名称</li></ul><h3 id="第一章-线程"><a href="#第一章-线程" class="headerlink" title="第一章 线程"></a>第一章 线程</h3><blockquote><p>先画个多线程执行时序图来体验一下多线程程序的执行流程。</p></blockquote><p>代码如下</p>]]></content>
       
       
       
